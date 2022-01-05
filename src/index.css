@@ -9,9 +9,9 @@ body{
 }
 
 select{
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     font-size: 1.5rem;
-    padding: 1em 1.5em;
+    padding: 1em 4em 1em 1.5em;
     background: #4d5061;
     color: white;
     border: 0;
@@ -31,4 +31,33 @@ select{
     width: 4rem;
     /*Altında kalan elementin tetiklenmesini sağlıyor*/
     pointer-events: none;
+}
+.custom-arrow::before,
+.custom-arrow::after{
+    --size: .65em;
+
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.custom-arrow::before{
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid rgba(255, 255, 255, 0.5);
+
+    top: 40%;
+}
+
+.custom-arrow::after{
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid rgba(255, 255, 255, 0.5);
+
+    top: 60%;
 }
